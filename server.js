@@ -23,10 +23,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use((req, res, next) => {
-  res.redirect("https://vali-smartbrain.netlify.app/" + req.path);
-});
-
 app.post("/signin", (req, res) => {
   signin.handleSignin(req, res, db, bcrypt);
 });
